@@ -1,0 +1,33 @@
+LDmicro export text.
+Source file: C:\Users\emile\Desktop\practica 3 garabito\ARDUINO\ladder.ld from 02/10/2019 23:37:47
+for 'Atmel AVR ATmega328 28-PDIP', 16 MHz crystal, 10.000 ms cycle time
+
+LADDER DIAGRAM:
+    ||                                  ||
+    ||    Xswitch1          Ytenue1     ||
+0001||-------] [--------------( )-------||
+  14||                                  ||
+  21||                                  ||
+    ||    Xswitch3          Ytenue2     ||
+0002||-------] [--------------( )-------||
+  14||                                  ||
+  21||                                  ||
+    ||    Xswitch2                      ||
+0003||-------] [-------                 ||
+  12||                                  ||
+  12||                                  ||
+    ||                                  ||
+   3||------[END]-----------------------||
+  52||                                  ||
+ 164||                                  ||
+
+E/S ASIGNACIÓN:
+  Nombre                     | Typo               | Pin | Port | Nombre  
+ ----------------------------+--------------------+-----+------+-----------
+  Xswitch1                   | entrada digital    |  14 | PB0   | PB0 (PCINT0 / CLKO / ICP1)
+  Xswitch2                   | entrada digital    |  15 | PB1   | PB1 (OC1A / PCINT1)
+  Xswitch3                   | entrada digital    |  18 | PB4   | PB4 (MISO / PCINT4)
+  Ytenue1                    | salida digital     |   4 | PD2   | PD2 (PCINT18 / INT0)
+  Ytenue2                    | salida digital     |   6 | PD4   | PD4 (PCINT20 / XCK / T0)
+
+VAR LIST:
