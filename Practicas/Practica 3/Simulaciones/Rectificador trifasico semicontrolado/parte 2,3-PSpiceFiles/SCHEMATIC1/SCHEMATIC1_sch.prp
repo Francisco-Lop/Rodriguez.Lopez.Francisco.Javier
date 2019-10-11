@@ -1,0 +1,150 @@
+("FILE_TYPE"	"PMAP File"
+    ("devices"
+        ("VSIN")
+        ("l")
+        ("r")
+        ("VSRC")
+    )
+    ("instances"
+        ("V1"
+            ("device_name"	"VSIN")
+            ("pspice_path"	"V_V1")
+            ("level"	"0")
+            ("model_params"
+                ("AC"
+                    ("value"	"0")
+                    ("pspice_param"	"AC")
+                )
+            )
+        )
+        ("L1"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L1")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"2mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("L2"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L2")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"1mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("L3"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L3")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"10mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("R1"
+            ("device_name"	"r")
+            ("pspice_path"	"R_R1")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"1")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("V2"
+            ("device_name"	"VSIN")
+            ("pspice_path"	"V_V2")
+            ("level"	"0")
+            ("model_params"
+                ("AC"
+                    ("value"	"0")
+                    ("pspice_param"	"AC")
+                )
+            )
+        )
+        ("L5"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L5")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"1mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("L4"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L4")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"2mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("V3"
+            ("device_name"	"VSIN")
+            ("pspice_path"	"V_V3")
+            ("level"	"0")
+            ("model_params"
+                ("AC"
+                    ("value"	"0")
+                    ("pspice_param"	"AC")
+                )
+            )
+        )
+        ("L6"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L6")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"2mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("L7"
+            ("device_name"	"l")
+            ("pspice_path"	"L_L7")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"1mH")
+                    ("pspice_param"	"VALUE")
+                )
+            )
+        )
+        ("V5"
+            ("device_name"	"VSRC")
+            ("pspice_path"	"V_V5")
+            ("level"	"0")
+            ("model_params"
+                ("DC"
+                    ("value"	"300")
+                    ("pspice_param"	"DC")
+                )
+                ("AC"
+                    ("value"	"0")
+                    ("pspice_param"	"AC")
+                )
+                ("TRAN"
+                    ("value"	"0")
+                    ("pspice_param"	"ACPHASE")
+                )
+            )
+        )
+    )
+)

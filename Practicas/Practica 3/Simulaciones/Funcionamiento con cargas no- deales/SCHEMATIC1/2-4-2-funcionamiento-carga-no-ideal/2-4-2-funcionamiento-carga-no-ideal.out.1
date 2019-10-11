@@ -1,0 +1,111 @@
+
+**** 09/28/19 05:15:46 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-4-2-funcionamiento-carga-no-ideal"  [ C:\Users\emile\Desktop\practica 3 garabito\2,4,2-funcionamiento-con-
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "2-4-2-funcionamiento-carga-no-ideal.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 10ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 2,4,2-FUNCIONAMIENTO-CON-CARGAS-NO-IDEALES
+V_V3         N01549 0  
++PULSE 0 1 10 10ns 10ns 100us 20ms
+V_V4         N01585 0  
++PULSE 0 1 10 10ns 10ns 100us 20ms
+X_X1         N01581 N01483 N01463 2N1595
+V_V5         N01669 0  
++PULSE 0 1 0 10ns 10ms 100us 20ms
+X_X3         N01601 N01549 N01463 2N1595
+X_X2         N01601 N01549 N01463 2N1595
+V_V1         N01573 N01601  AC 0
++SIN 0 220Vrms 50hz 0 0 0
+X_X4         0 N01585 N01581 2N1595
+L_L1         N01573 N01581  1nH  
+X_X5         0 N01669 N01601 2N1595
+V_V2         N01483 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+R_R1         N02400 N01463  1  
+L_L2         N02400 N021481  6mh  
+V_V6         N021481 0 DC 120  
+
+**** RESUMING 2-4-2-funcionamiento-carga-no-ideal.cir ****
+.END
+
+ERROR -- EVALUATION VERSION analog Node Limit (75 Nodes) Exceeded!
+
+
+
+
+ABORTING SIMULATION
+**** 09/28/19 05:15:46 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-4-2-funcionamiento-carga-no-ideal"  [ C:\Users\emile\Desktop\practica 3 garabito\2,4,2-funcionamiento-con-
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =          11
+  External (NCNODS)                 =         101
+  Total (NUMNOD)                    =         101
+
+Total device count (NUMEL)          =         176
+  Capacitors (C)                    =          10
+  Diodes (D)                        =          35
+  VCVS (E)                          =          40
+  Inductors (L)                     =           2
+  Resistors (R)                     =          61
+  VSwitches (S)                     =           5
+  Voltage Sources (V)               =          21
+
+Number of subcircuits (X)           =          10
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =           0
+  No. rejected time points (NUMRTP) =           0
+  No. iterations (NUMNIT)           =           0
+
+Load Threads                        =           1
+
+Runtime statistics:                       Seconds      Iterations
+  Readin                            =         .06
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =       62.95
+  License check-out time            =       62.95
+  Total job time                    =         .06
+

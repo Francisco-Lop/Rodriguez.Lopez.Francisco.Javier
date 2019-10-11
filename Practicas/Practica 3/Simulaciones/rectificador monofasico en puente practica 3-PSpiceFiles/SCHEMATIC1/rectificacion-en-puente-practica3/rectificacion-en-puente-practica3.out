@@ -1,0 +1,308 @@
+
+**** 09/29/19 14:11:58 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-rectificacion-en-puente-practica3"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico en 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "rectificacion-en-puente-practica3.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 60ms 0 10ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source RECTIFICADOR MONOFASICO EN PUENTE PRACTICA 3
+X_X1         N00542 N00739 N00559 2N1595
+X_X2         N00528 N00905 N00559 2N1595
+X_X3         N00528 N00905 N00559 2N1595
+X_X4         0 N01075 N00542 2N1595
+X_X5         0 N01095 N00528 2N1595
+V_V1         N00470 N00528  AC 0
++SIN 45 116Vrms 50hz 0 0 0
+L_L1         N00470 N00542  1nH  
+I_I1         N00559 0 DC 10A  
+V_V3         N00905 0  
++PULSE 0 1 10 10ns 10ns 100us 20ms
+V_V5         N00739 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V6         N01075 0  
++PULSE 0 1 10 10ns 10ns 100us 20ms
+V_V7         N01095 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+
+**** RESUMING rectificacion-en-puente-practica3.cir ****
+.END
+
+**** 09/29/19 14:11:58 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-rectificacion-en-puente-practica3"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico en 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.X1.Dgk     X_X1.X1.Dseries X_X1.X1.Delay   X_X1.X1.Dkarev  
+          IS  100.000000E-18   10.000000E-15    1.000000E-12  100.000000E-12 
+          RS    5                                .01             .01         
+         CJO   50.000000E-12                    5.000000E-12    5.000000E-12 
+
+
+               X_X1.X1.Dakfwd  X_X1.X1.Dbreak  X_X2.X1.Dgk     X_X2.X1.Dseries 
+          IS   40.000000E-12   10.000000E-15  100.000000E-18   10.000000E-15 
+          BV                   55                                            
+         IBV                  100.000000E-09                                 
+          RS                     .5             5                            
+         CJO    5.000000E-12    5.000000E-12   50.000000E-12                 
+
+
+               X_X2.X1.Delay   X_X2.X1.Dkarev  X_X2.X1.Dakfwd  X_X2.X1.Dbreak  
+          IS    1.000000E-12  100.000000E-12   40.000000E-12   10.000000E-15 
+          BV                                                   55            
+         IBV                                                  100.000000E-09 
+          RS     .01             .01                             .5          
+         CJO    5.000000E-12    5.000000E-12    5.000000E-12    5.000000E-12 
+
+
+               X_X3.X1.Dgk     X_X3.X1.Dseries X_X3.X1.Delay   X_X3.X1.Dkarev  
+          IS  100.000000E-18   10.000000E-15    1.000000E-12  100.000000E-12 
+          RS    5                                .01             .01         
+         CJO   50.000000E-12                    5.000000E-12    5.000000E-12 
+
+
+               X_X3.X1.Dakfwd  X_X3.X1.Dbreak  X_X4.X1.Dgk     X_X4.X1.Dseries 
+          IS   40.000000E-12   10.000000E-15  100.000000E-18   10.000000E-15 
+          BV                   55                                            
+         IBV                  100.000000E-09                                 
+          RS                     .5             5                            
+         CJO    5.000000E-12    5.000000E-12   50.000000E-12                 
+
+
+               X_X4.X1.Delay   X_X4.X1.Dkarev  X_X4.X1.Dakfwd  X_X4.X1.Dbreak  
+          IS    1.000000E-12  100.000000E-12   40.000000E-12   10.000000E-15 
+          BV                                                   55            
+         IBV                                                  100.000000E-09 
+          RS     .01             .01                             .5          
+         CJO    5.000000E-12    5.000000E-12    5.000000E-12    5.000000E-12 
+
+
+               X_X5.X1.Dgk     X_X5.X1.Dseries X_X5.X1.Delay   X_X5.X1.Dkarev  
+          IS  100.000000E-18   10.000000E-15    1.000000E-12  100.000000E-12 
+          RS    5                                .01             .01         
+         CJO   50.000000E-12                    5.000000E-12    5.000000E-12 
+
+
+               X_X5.X1.Dakfwd  X_X5.X1.Dbreak  
+          IS   40.000000E-12   10.000000E-15 
+          BV                   55            
+         IBV                  100.000000E-09 
+          RS                     .5          
+         CJO    5.000000E-12    5.000000E-12 
+
+
+**** 09/29/19 14:11:58 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-rectificacion-en-puente-practica3"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico en 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.X1.Vswitch X_X2.X1.Vswitch X_X3.X1.Vswitch X_X4.X1.Vswitch 
+         RON     .4              .4              .4              .4          
+        ROFF  454.545500E+03  454.545500E+03  454.545500E+03  454.545500E+03 
+         VON    5               5               5               5            
+        VOFF    1.5             1.5             1.5             1.5          
+
+
+               X_X5.X1.Vswitch 
+         RON     .4          
+        ROFF  454.545500E+03 
+         VON    5            
+        VOFF    1.5          
+
+
+**** 09/29/19 14:11:58 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-rectificacion-en-puente-practica3"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico en 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00470)   40.2050 (N00528)   -4.7947 (N00542)   40.2050 (N00559)   35.4040     
+
+(N00739)    0.0000 (N00905)    0.0000 (N01075)    0.0000 (N01095)    0.0000     
+
+(X_X1.X1.Itot)   10.3010              (X_X1.X1.prod)   10.0000                  
+
+(X_X2.X1.Itot)    0.0000              (X_X2.X1.prod)    0.0000                  
+
+(X_X3.X1.Itot)    0.0000              (X_X3.X1.prod)    0.0000                  
+
+(X_X4.X1.Itot)    0.0000              (X_X4.X1.prod)    0.0000                  
+
+(X_X5.X1.Itot)   10.2910              (X_X5.X1.prod)   10.0000                  
+
+(X_X1.X1.dlay1)   10.0000             (X_X1.X1.dlay2)   10.0000                 
+
+(X_X1.X1.dvdt0)    4.8010             (X_X1.X1.dvdt1)   35.4040                 
+
+(X_X1.X1.dvdt2)   35.4040             (X_X1.X1.gate1)    2.5289                 
+
+(X_X1.X1.gate2)   35.4040             (X_X1.X1.gate4)    0.0000                 
+
+(X_X2.X1.dlay1)    0.0000             (X_X2.X1.dlay2)    0.0000                 
+
+(X_X2.X1.dvdt0)    0.0000             (X_X2.X1.dvdt1)   35.4040                 
+
+(X_X2.X1.dvdt2)   35.4040             (X_X2.X1.gate1)    2.5289                 
+
+(X_X2.X1.gate2)   35.4040             (X_X2.X1.gate4)    0.0000                 
+
+(X_X3.X1.dlay1)    0.0000             (X_X3.X1.dlay2)    0.0000                 
+
+(X_X3.X1.dvdt0)    0.0000             (X_X3.X1.dvdt1)   35.4040                 
+
+(X_X3.X1.dvdt2)   35.4040             (X_X3.X1.gate1)    2.5289                 
+
+(X_X3.X1.gate2)   35.4040             (X_X3.X1.gate4)    0.0000                 
+
+(X_X4.X1.dlay1)    0.0000             (X_X4.X1.dlay2)    0.0000                 
+
+(X_X4.X1.dvdt0)    0.0000             (X_X4.X1.dvdt1)   40.2050                 
+
+(X_X4.X1.dvdt2)   40.2050             (X_X4.X1.gate1)    2.8718                 
+
+(X_X4.X1.gate2)   40.2050             (X_X4.X1.gate4)    0.0000                 
+
+(X_X5.X1.dlay1)   10.0000             (X_X5.X1.dlay2)   10.0000                 
+
+(X_X5.X1.dvdt0)    4.7947             (X_X5.X1.dvdt1)   -4.7947                 
+
+(X_X5.X1.dvdt2)   -4.7947             (X_X5.X1.gate1)   -3.2657                 
+
+(X_X5.X1.gate2)   -4.7947             (X_X5.X1.gate4)   10.0000                 
+
+(X_X1.X1.anode0)   36.0840            (X_X1.X1.anode2)   35.4040                
+
+(X_X1.X1.break1)   40.0450            (X_X1.X1.contot)   10.0000                
+
+(X_X2.X1.anode0)   35.0500            (X_X2.X1.anode2)   35.4040                
+
+(X_X2.X1.break1)   35.1880            (X_X2.X1.contot)    0.0000                
+
+(X_X3.X1.anode0)   35.0500            (X_X3.X1.anode2)   35.4040                
+
+(X_X3.X1.break1)   35.1880            (X_X3.X1.contot)    0.0000                
+
+(X_X4.X1.anode0)   39.8510            (X_X4.X1.anode2)   40.2050                
+
+(X_X4.X1.break1)   39.9890            (X_X4.X1.contot)    0.0000                
+
+(X_X5.X1.anode0)   -4.1151            (X_X5.X1.anode2)   -4.7947                
+
+(X_X5.X1.break1)    -.1598            (X_X5.X1.contot)   10.0000                
+
+(X_X1.X1.condvdt)    0.0000           (X_X1.X1.congate)    0.0000               
+
+(X_X1.X1.conmain)   10.0000           (X_X1.X1.control)    9.9390               
+
+(X_X2.X1.condvdt)    0.0000           (X_X2.X1.congate)    0.0000               
+
+(X_X2.X1.conmain)    0.0000           (X_X2.X1.control)    0.0000               
+
+(X_X3.X1.condvdt)    0.0000           (X_X3.X1.congate)    0.0000               
+
+(X_X3.X1.conmain)    0.0000           (X_X3.X1.control)    0.0000               
+
+(X_X4.X1.condvdt)    0.0000           (X_X4.X1.congate)    0.0000               
+
+(X_X4.X1.conmain)    0.0000           (X_X4.X1.control)    0.0000               
+
+(X_X5.X1.condvdt)    0.0000           (X_X5.X1.congate)   10.0000               
+
+(X_X5.X1.conmain)   10.0000           (X_X5.X1.control)    9.9388           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.042E+01
+    V_V3         2.023E-01
+    V_V5         1.012E-01
+    V_V6         1.149E-01
+    V_V7        -1.306E-01
+    X_X1.X1.VIak   1.030E+01
+    X_X1.X1.VdVdt   2.002E-14
+    X_X1.X1.VIgf  -1.012E-01
+    X_X2.X1.VIak  -4.038E-11
+    X_X2.X1.VdVdt   0.000E+00
+    X_X2.X1.VIgf  -1.012E-01
+    X_X3.X1.VIak  -4.038E-11
+    X_X3.X1.VdVdt   0.000E+00
+    X_X3.X1.VIgf  -1.012E-01
+    X_X4.X1.VIak  -4.038E-11
+    X_X4.X1.VdVdt   1.243E-14
+    X_X4.X1.VIgf  -1.149E-01
+    X_X5.X1.VIak   1.029E+01
+    X_X5.X1.VdVdt   0.000E+00
+    X_X5.X1.VIgf   1.306E-01
+
+    TOTAL POWER DISSIPATION   4.69E+02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 09/29/19 14:11:58 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-rectificacion-en-puente-practica3"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico en 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =       22.81
+

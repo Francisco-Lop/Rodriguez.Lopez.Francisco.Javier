@@ -1,0 +1,28 @@
+* source PARTE 2,3
+V_V1         N00579 0  AC 0
++SIN 0 310 60 0 0 0
+L_L1         N00579 N00583  2mH  
+L_L2         N00583 N00668  1mH  
+L_L3         N00624 N00636  10mH  
+R_R1         N00640 N00636  1  
+D_D1         N00612 N00668 Dbreak 
+D_D2         N00612 N00672 Dbreak 
+D_D3         N00612 N00676 Dbreak 
+V_V2         N00596 0  AC 0
++SIN 0 310 60 0 0 0
+L_L5         N00604 N00672  1mH  
+L_L4         N00596 N00604  2mH  
+V_V3         N00600 0  AC 0
++SIN 0 310 60 0 0 0
+L_L6         N00600 N00608  2mH  
+L_L7         N00608 N00676  1mH  
+X_X1         N00668 N00985 N00624 2N1595
+X_X2         N00672 N01000 N00624 2N1595
+X_X3         N00676 N01019 N00624 2N1595
+V_V4         N00985 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V5         N00640 N00612 DC 300 AC 0 0
+V_V6         N01000 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V7         N01019 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms

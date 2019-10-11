@@ -1,0 +1,158 @@
+
+**** 09/28/19 04:21:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-3principiosdefuncion"  [ C:\Users\emile\Pictures\principios de funcionamiento del tiristor-PSpiceFiles\SCH
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "2-3principiosdefuncion.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 40ms 0 5ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PRINCIPIOS DE FUNCIONAMIENTO DEL TIRISTOR
+V_V2         N00271 0  AC 0
++SIN 0 220Vrms 50hz 0 0 0
+V_V3         N00235 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+R_R1         0 N00264  10  
+X_X1         N00271 N00235 N00264 2N1595
+
+**** RESUMING 2-3principiosdefuncion.cir ****
+.END
+
+**** 09/28/19 04:21:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-3principiosdefuncion"  [ C:\Users\emile\Pictures\principios de funcionamiento del tiristor-PSpiceFiles\SCH
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.X1.Dgk     X_X1.X1.Dseries X_X1.X1.Delay   X_X1.X1.Dkarev  
+          IS  100.000000E-18   10.000000E-15    1.000000E-12  100.000000E-12 
+          RS    5                                .01             .01         
+         CJO   50.000000E-12                    5.000000E-12    5.000000E-12 
+
+
+               X_X1.X1.Dakfwd  X_X1.X1.Dbreak  
+          IS   40.000000E-12   10.000000E-15 
+          BV                   55            
+         IBV                  100.000000E-09 
+          RS                     .5          
+         CJO    5.000000E-12    5.000000E-12 
+
+
+**** 09/28/19 04:21:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-3principiosdefuncion"  [ C:\Users\emile\Pictures\principios de funcionamiento del tiristor-PSpiceFiles\SCH
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X1.X1.Vswitch 
+         RON     .4          
+        ROFF  454.545500E+03 
+         VON    5            
+        VOFF    1.5          
+
+
+**** 09/28/19 04:21:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-3principiosdefuncion"  [ C:\Users\emile\Pictures\principios de funcionamiento del tiristor-PSpiceFiles\SCH
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00235)    0.0000 (N00264)-129.4E-27 (N00271)    0.0000                        
+
+(X_X1.X1.Itot)    0.0000              (X_X1.X1.prod)    0.0000                  
+
+(X_X1.X1.dlay1) 106.2E-27             (X_X1.X1.dlay2)-466.7E-27                 
+
+(X_X1.X1.dvdt0) 129.4E-27             (X_X1.X1.dvdt1)-129.4E-27                 
+
+(X_X1.X1.dvdt2)-129.4E-27             (X_X1.X1.gate1) 323.4E-27                 
+
+(X_X1.X1.gate2)-129.4E-27             (X_X1.X1.gate4)    0.0000                 
+
+(X_X1.X1.anode0)-317.6E-30            (X_X1.X1.anode2)-129.4E-27                
+
+(X_X1.X1.break1)-128.2E-18            (X_X1.X1.contot)    0.0000                
+
+(X_X1.X1.condvdt)    0.0000           (X_X1.X1.congate)    0.0000               
+
+(X_X1.X1.conmain)    0.0000           (X_X1.X1.control)-33.70E-21           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+    V_V3         1.294E-26
+    X_X1.X1.VIak   0.000E+00
+    X_X1.X1.VdVdt   0.000E+00
+    X_X1.X1.VIgf  -1.294E-26
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 09/28/19 04:21:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-2-3principiosdefuncion"  [ C:\Users\emile\Pictures\principios de funcionamiento del tiristor-PSpiceFiles\SCH
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       74.75
+  Total job time (using Solver 1)   =         .17
+

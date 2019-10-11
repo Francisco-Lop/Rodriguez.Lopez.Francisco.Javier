@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-2-4-2-funcionamiento-carga-no-ideal"  [ C:\Users\emile\Desktop\practica 3 garabito\2,4,2-funcionamiento-con-cargas-no-ideales-pspicefiles\schematic1\2-4-2-funcionamiento-carga-no-ideal.sim ] 
+
+** Creating circuit file "2-4-2-funcionamiento-carga-no-ideal.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 10ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

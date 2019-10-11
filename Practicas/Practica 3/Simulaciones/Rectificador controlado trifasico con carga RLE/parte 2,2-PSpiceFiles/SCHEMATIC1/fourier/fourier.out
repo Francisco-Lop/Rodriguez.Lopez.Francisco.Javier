@@ -1,0 +1,131 @@
+
+**** 10/03/19 12:06:23 ******* PSpice Lite (April 2011) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-fourier"  [ C:\Cadence\SPB_16.5\tools\capture\parte 2,2-pspicefiles\schematic1\fourier.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "fourier.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.5\tools\PSpice\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 50ms 
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PARTE 2,2
+L_L1         N04749 N00707  2mH  
+L_L7         N00889 N00663  10mH  
+R_R1         N00659 N00663  1  
+L_L8         N00707 N00635  1mH  
+L_L2         N00695 N00703  2mH  
+L_L9         N00703 N00639  1mH  
+L_L10         N00711 N00643  1mH  
+L_L3         N04753 N00711  2mH  
+V_V2         N00695 N00671  AC 0
++SIN 0 310 60 0 0 0
+V_V5         N02971 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V6         N02984 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V7         N03000 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V8         N02836 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V9         N02872 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+V_V10         N02913 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+X_X7         0 N03000 N00643 2N1595
+X_X8         0 N02984 N00639 2N1595
+X_X9         0 N02971 N00635 2N1595
+X_X10         N00635 N02836 N00889 2N1595
+X_X11         N00639 N02872 N00889 2N1595
+X_X12         N00643 N02913 N00889 2N1595
+V_V11         N00659 0 300Vdc
+V_V3         N04749 N00671  AC 0
++SIN 0 310 60 0 0 0
+V_V4         N04753 N00671  AC 0
++SIN 0 310 60 0 0 0
+
+**** RESUMING fourier.cir ****
+.END
+
+ERROR -- EVALUATION VERSION analog Node Limit (75 Nodes) Exceeded!
+
+
+
+
+ABORTING SIMULATION
+**** 10/03/19 12:06:23 ******* PSpice Lite (April 2011) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-fourier"  [ C:\Cadence\SPB_16.5\tools\capture\parte 2,2-pspicefiles\schematic1\fourier.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =          20
+  External (NCNODS)                 =         128
+  Total (NUMNOD)                    =         128
+
+Total device count (NUMEL)          =         223
+  Capacitors (C)                    =          12
+  Diodes (D)                        =          42
+  VCVS (E)                          =          48
+  Inductors (L)                     =           7
+  Resistors (R)                     =          73
+  VSwitches (S)                     =           6
+  Voltage Sources (V)               =          28
+
+Number of subcircuits (X)           =          12
+
+Matrix statistics:
+  Matrix size (NSTOP)               =         128
+  Initial no. elements (NTTAR)      =           0
+  No. elements w/ fillin (NTTBR)    =           0
+  No. fillins (IFILL)               =           0
+  No. overflows (NTTOV)             =           0
+  No. LU operations (IOPS)          =           0
+  Percent sparsity (PERSPA)         =       0.000
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =           0
+  No. rejected time points (NUMRTP) =           0
+  No. iterations (NUMNIT)           =           0
+
+Runtime statistics:                       Seconds      Iterations
+  Matrix load                       =        0.00
+  Matrix solution                   =        0.00               0
+  Readin                            =         .08
+  General setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =        0.00
+  Total job time                    =         .09
+

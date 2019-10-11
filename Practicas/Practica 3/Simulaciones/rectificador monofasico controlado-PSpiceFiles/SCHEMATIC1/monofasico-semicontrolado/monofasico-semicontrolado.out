@@ -1,0 +1,208 @@
+
+**** 10/03/19 13:15:13 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-monofasico-semicontrolado"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico controlado-
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "monofasico-semicontrolado.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40ms 0 5ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source RECTIFICADOR MONOFASICO CONTROLADO
+V_V2         N01483 0  
++PULSE 0 1 0 10ns 10ns 100us 20ms
+X_X4         0 N01585 N01581 2N1595
+I_I1         N01463 0 DC 10A  
+X_X1         N01581 N01483 N01463 2N1595
+V_V4         N01585 0  
++PULSE 0 1 10 10ns 10ns 100us 20ms
+V_V1         N01573 N01601  AC 0
++SIN 0 220Vrms 50hz 0 0 0
+L_L1         N01573 N01581  1mh  
+D_D3         0 N01601 D1N1190 
+D_D4         N01601 N01463 D1N1190 
+
+**** RESUMING monofasico-semicontrolado.cir ****
+.END
+
+**** 10/03/19 13:15:13 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-monofasico-semicontrolado"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico controlado-
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N1190         X_X4.X1.Dgk     X_X4.X1.Dseries X_X4.X1.Delay   
+          IS    1.331000E-06  100.000000E-18   10.000000E-15    1.000000E-12 
+           N    2.108                                                        
+         ISR   40.740000E-06                                                 
+         IKF   11.73                                                         
+          BV  400                                                            
+         IBV  100.000000E-06                                                 
+          RS    1.029000E-03    5                                .01         
+          TT    5.000000E-09                                                 
+         CJO    1.000000E-12   50.000000E-12                    5.000000E-12 
+          VJ     .7                                                          
+
+
+               X_X4.X1.Dkarev  X_X4.X1.Dakfwd  X_X4.X1.Dbreak  X_X1.X1.Dgk     
+          IS  100.000000E-12   40.000000E-12   10.000000E-15  100.000000E-18 
+          BV                                   55                            
+         IBV                                  100.000000E-09                 
+          RS     .01                             .5             5            
+         CJO    5.000000E-12    5.000000E-12    5.000000E-12   50.000000E-12 
+
+
+               X_X1.X1.Dseries X_X1.X1.Delay   X_X1.X1.Dkarev  X_X1.X1.Dakfwd  
+          IS   10.000000E-15    1.000000E-12  100.000000E-12   40.000000E-12 
+          RS                     .01             .01                         
+         CJO                    5.000000E-12    5.000000E-12    5.000000E-12 
+
+
+               X_X1.X1.Dbreak  
+          IS   10.000000E-15 
+          BV   55            
+         IBV  100.000000E-09 
+          RS     .5          
+         CJO    5.000000E-12 
+
+
+**** 10/03/19 13:15:13 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-monofasico-semicontrolado"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico controlado-
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_X4.X1.Vswitch X_X1.X1.Vswitch 
+         RON     .4              .4          
+        ROFF  454.545500E+03  454.545500E+03 
+         VON    5               5            
+        VOFF    1.5             1.5          
+
+
+**** 10/03/19 13:15:13 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-monofasico-semicontrolado"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico controlado-
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N01463)   -1.4330 (N01483)    0.0000 (N01573)    -.7174 (N01581)    -.7174     
+
+(N01585)    0.0000 (N01601)    -.7174 (X_X1.X1.Itot)     .3159                  
+
+(X_X1.X1.prod)     .2260              (X_X4.X1.Itot) 52.60E-06                  
+
+(X_X4.X1.prod) 37.73E-06              (X_X1.X1.dlay1)   10.0000                 
+
+(X_X1.X1.dlay2)   10.0000             (X_X1.X1.dvdt0)     .7155                 
+
+(X_X1.X1.dvdt1)   -1.4330             (X_X1.X1.dvdt2)   -1.4330                 
+
+(X_X1.X1.gate1)    -.4997             (X_X1.X1.gate2)   -1.4330                 
+
+(X_X1.X1.gate4)   10.0000             (X_X4.X1.dlay1)    1.1751                 
+
+(X_X4.X1.dlay2)    1.1751             (X_X4.X1.dvdt0)     .7174                 
+
+(X_X4.X1.dvdt1)    -.7174             (X_X4.X1.dvdt2)    -.7174                 
+
+(X_X4.X1.gate1)    -.0516             (X_X4.X1.gate2)    -.7174                 
+
+(X_X4.X1.gate4)    1.6379             (X_X1.X1.anode0)    -.8436                
+
+(X_X1.X1.anode2)   -1.4330            (X_X1.X1.break1)    -.8201                
+
+(X_X1.X1.contot)   10.0000            (X_X4.X1.anode0)    -.4555                
+
+(X_X4.X1.anode2)    -.7174            (X_X4.X1.break1)    -.1028                
+
+(X_X4.X1.contot)    1.1751            (X_X1.X1.condvdt)    0.0000               
+
+(X_X1.X1.congate)    7.1554           (X_X1.X1.conmain)   10.0000               
+
+(X_X1.X1.control)    9.9408           (X_X4.X1.condvdt)    0.0000               
+
+(X_X4.X1.congate)    1.1751           (X_X4.X1.conmain)    0.0000               
+
+(X_X4.X1.control)    1.1613           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.999E-02
+    V_V4        -2.064E-03
+    V_V1        -3.133E-01
+    X_X4.X1.VIak   1.002E-06
+    X_X4.X1.VdVdt   1.466E-14
+    X_X4.X1.VIgf   2.064E-03
+    X_X1.X1.VIak   3.154E-01
+    X_X1.X1.VdVdt   5.329E-14
+    X_X1.X1.VIgf   1.999E-02
+
+    TOTAL POWER DISSIPATION  -0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 10/03/19 13:15:13 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-monofasico-semicontrolado"  [ C:\Users\emile\Desktop\practica 3 garabito\rectificador monofasico controlado-
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .55
+
