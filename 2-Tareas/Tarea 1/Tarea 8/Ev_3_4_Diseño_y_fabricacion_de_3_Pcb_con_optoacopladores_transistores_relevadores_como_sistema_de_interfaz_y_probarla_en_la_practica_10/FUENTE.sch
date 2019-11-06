@@ -1,0 +1,270 @@
+EESchema Schematic File Version 4
+LIBS:FUENTE-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5DC1987E
+P 2600 2600
+F 0 "J1" H 2680 2592 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 2680 2501 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_Wuerth_691311400102_P7.62mm" H 2600 2600 50  0001 C CNN
+F 3 "~" H 2600 2600 50  0001 C CNN
+	1    2600 2600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D1
+U 1 1 5DC19DFE
+P 3700 2100
+F 0 "D1" H 3700 2316 50  0000 C CNN
+F 1 "1N4007" H 3700 2225 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3700 1925 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3700 2100 50  0001 C CNN
+	1    3700 2100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D4
+U 1 1 5DC1AF16
+P 4650 2100
+F 0 "D4" H 4650 2316 50  0000 C CNN
+F 1 "1N4007" H 4650 2225 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4650 1925 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4650 2100 50  0001 C CNN
+	1    4650 2100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D3
+U 1 1 5DC1B526
+P 4600 2850
+F 0 "D3" H 4600 3066 50  0000 C CNN
+F 1 "1N4007" H 4600 2975 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4600 2675 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4600 2850 50  0001 C CNN
+	1    4600 2850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D2
+U 1 1 5DC1BB5C
+P 3700 2850
+F 0 "D2" H 3700 3066 50  0000 C CNN
+F 1 "1N4007" H 3700 2975 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3700 2675 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3700 2850 50  0001 C CNN
+	1    3700 2850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:CP C1
+U 1 1 5DC1CC41
+P 5700 2500
+F 0 "C1" H 5818 2546 50  0000 L CNN
+F 1 "2200uF" H 5818 2455 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal" H 5738 2350 50  0001 C CNN
+F 3 "~" H 5700 2500 50  0001 C CNN
+	1    5700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C3
+U 1 1 5DC1D269
+P 8200 2400
+F 0 "C3" H 8318 2446 50  0000 L CNN
+F 1 "270uF" H 8318 2355 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal" H 8238 2250 50  0001 C CNN
+F 3 "~" H 8200 2400 50  0001 C CNN
+	1    8200 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C2
+U 1 1 5DC1DCDF
+P 6250 2500
+F 0 "C2" H 6365 2546 50  0000 L CNN
+F 1 "0.1uF" H 6365 2455 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal" H 6250 2500 50  0001 C CNN
+F 3 "~" H 6250 2500 50  0001 C CNN
+	1    6250 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 5DC1EB6E
+P 7000 3050
+F 0 "RV1" H 6930 3096 50  0000 R CNN
+F 1 "5K" H 6930 3005 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_ACP_CA9-H3,8_Horizontal" H 7000 3050 50  0001 C CNN
+F 3 "~" H 7000 3050 50  0001 C CNN
+	1    7000 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5DC1F13D
+P 7400 2550
+F 0 "R1" H 7470 2596 50  0000 L CNN
+F 1 "10k" H 7470 2505 50  0000 L CNN
+F 2 "Resistor_THT:R_Array_SIP4" V 7330 2550 50  0001 C CNN
+F 3 "~" H 7400 2550 50  0001 C CNN
+	1    7400 2550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J2
+U 1 1 5DC1FE33
+P 9100 2450
+F 0 "J2" H 9180 2442 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 9180 2351 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_Wuerth_691311400102_P7.62mm" H 9100 2450 50  0001 C CNN
+F 3 "~" H 9100 2450 50  0001 C CNN
+	1    9100 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 2100 4200 2100
+Wire Wire Line
+	4800 2100 5000 2100
+Wire Wire Line
+	5000 2100 5000 2500
+Wire Wire Line
+	5000 2850 4750 2850
+Wire Wire Line
+	3850 2850 4150 2850
+Wire Wire Line
+	3550 2850 3250 2850
+Wire Wire Line
+	3250 2850 3250 2500
+Wire Wire Line
+	3250 2100 3550 2100
+Wire Wire Line
+	2800 2600 2800 1600
+Wire Wire Line
+	2800 1600 4200 1600
+Wire Wire Line
+	4200 1600 4200 2100
+Connection ~ 4200 2100
+Wire Wire Line
+	4200 2100 4500 2100
+Wire Wire Line
+	2800 2700 2800 3450
+Wire Wire Line
+	2800 3450 4150 3450
+Wire Wire Line
+	4150 3450 4150 2850
+Connection ~ 4150 2850
+Wire Wire Line
+	4150 2850 4450 2850
+Wire Wire Line
+	5000 2500 5300 2500
+Wire Wire Line
+	5300 2500 5300 1900
+Wire Wire Line
+	5300 1900 5700 1900
+Wire Wire Line
+	5700 1900 5700 2350
+Connection ~ 5000 2500
+Wire Wire Line
+	5000 2500 5000 2850
+Wire Wire Line
+	3250 2500 3050 2500
+Wire Wire Line
+	3050 2500 3050 3800
+Wire Wire Line
+	3050 3800 5700 3800
+Wire Wire Line
+	8800 3800 8800 2550
+Wire Wire Line
+	8800 2550 8900 2550
+Connection ~ 3250 2500
+Wire Wire Line
+	3250 2500 3250 2100
+Wire Wire Line
+	5700 2650 5700 3800
+Connection ~ 5700 3800
+Wire Wire Line
+	5700 3800 6250 3800
+Wire Wire Line
+	6250 1900 6250 2350
+Connection ~ 5700 1900
+Wire Wire Line
+	6250 2650 6250 3800
+Connection ~ 6250 3800
+Wire Wire Line
+	6250 1900 6250 1750
+Connection ~ 6250 1900
+Wire Wire Line
+	6950 2050 6950 2550
+Wire Wire Line
+	6950 2900 7000 2900
+Wire Wire Line
+	6550 3250 6550 3850
+Wire Wire Line
+	7150 3050 7400 3050
+Wire Wire Line
+	7400 3050 7400 3800
+Connection ~ 7400 3800
+Wire Wire Line
+	7400 3800 8200 3800
+Wire Wire Line
+	6950 2550 7250 2550
+Connection ~ 6950 2550
+Wire Wire Line
+	6950 2550 6950 2900
+Wire Wire Line
+	8800 1750 8800 2450
+Wire Wire Line
+	8800 2450 8900 2450
+Wire Wire Line
+	7550 2550 7800 2550
+Wire Wire Line
+	7800 2550 7800 1750
+Connection ~ 7800 1750
+Wire Wire Line
+	7800 1750 8200 1750
+Wire Wire Line
+	8200 2250 8200 1750
+Connection ~ 8200 1750
+Wire Wire Line
+	8200 1750 8800 1750
+Wire Wire Line
+	8200 2550 8200 3800
+Connection ~ 8200 3800
+Wire Wire Line
+	8200 3800 8800 3800
+Wire Wire Line
+	7250 1750 7800 1750
+$Comp
+L Regulator_Linear:LM317_TO3 U1
+U 1 1 5DC1F9B9
+P 6950 1750
+F 0 "U1" H 6950 1992 50  0000 C CNN
+F 1 "LM317_TO3" H 6950 1901 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-3_P5.08mm" H 6950 1950 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm317.pdf" H 6950 1750 50  0001 C CNN
+	1    6950 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 1750 6250 1750
+Wire Wire Line
+	6100 1900 6250 1900
+Wire Wire Line
+	6250 3800 7400 3800
+Wire Wire Line
+	5700 1900 6250 1900
+$EndSCHEMATC
