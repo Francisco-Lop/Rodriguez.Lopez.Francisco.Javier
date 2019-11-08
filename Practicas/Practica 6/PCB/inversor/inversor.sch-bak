@@ -1,0 +1,128 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Amplifier_Operational:LM741 U1
+U 1 1 5DB215E5
+P 4650 3450
+F 0 "U1" H 4994 3496 50  0000 L CNN
+F 1 "LM741" H 4994 3405 50  0000 L CNN
+F 2 "" H 4700 3500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm741.pdf" H 4800 3600 50  0001 C CNN
+	1    4650 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:VSIN V1
+U 1 1 5DB21AD3
+P 3550 3900
+F 0 "V1" H 3680 3991 50  0000 L CNN
+F 1 "VSIN" H 3680 3900 50  0000 L CNN
+F 2 "" H 3550 3900 50  0001 C CNN
+F 3 "~" H 3550 3900 50  0001 C CNN
+F 4 "Y" H 3550 3900 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 3550 3900 50  0001 L CNN "Spice_Primitive"
+F 6 "sin(0 1 1k)" H 3680 3809 50  0000 L CNN "Spice_Model"
+	1    3550 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5DB22026
+P 3750 3300
+F 0 "R1" V 3543 3300 50  0000 C CNN
+F 1 "R" V 3634 3300 50  0000 C CNN
+F 2 "" V 3680 3300 50  0001 C CNN
+F 3 "~" H 3750 3300 50  0001 C CNN
+	1    3750 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5DB222D7
+P 4550 2750
+F 0 "R2" V 4343 2750 50  0000 C CNN
+F 1 "R" V 4434 2750 50  0000 C CNN
+F 2 "" V 4480 2750 50  0001 C CNN
+F 3 "~" H 4550 2750 50  0001 C CNN
+	1    4550 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5DB22635
+P 3550 4300
+F 0 "#PWR0101" H 3550 4050 50  0001 C CNN
+F 1 "GND" H 3555 4127 50  0000 C CNN
+F 2 "" H 3550 4300 50  0001 C CNN
+F 3 "" H 3550 4300 50  0001 C CNN
+	1    3550 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5DB22A5D
+P 4150 3900
+F 0 "#PWR0102" H 4150 3650 50  0001 C CNN
+F 1 "GND" H 4155 3727 50  0000 C CNN
+F 2 "" H 4150 3900 50  0001 C CNN
+F 3 "" H 4150 3900 50  0001 C CNN
+	1    4150 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5DB22C0E
+P 4950 4000
+F 0 "#PWR0103" H 4950 3750 50  0001 C CNN
+F 1 "GND" H 4955 3827 50  0000 C CNN
+F 2 "" H 4950 4000 50  0001 C CNN
+F 3 "" H 4950 4000 50  0001 C CNN
+	1    4950 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3700 3600 3300
+Wire Wire Line
+	3900 3300 4050 3300
+Wire Wire Line
+	4100 3300 4100 3550
+Wire Wire Line
+	4100 3550 4350 3550
+Wire Wire Line
+	4400 2750 4050 2750
+Wire Wire Line
+	4050 2750 4050 3300
+Connection ~ 4050 3300
+Wire Wire Line
+	4050 3300 4100 3300
+Wire Wire Line
+	4350 3350 4150 3350
+Wire Wire Line
+	4150 3350 4150 3900
+Wire Wire Line
+	3550 4100 3550 4300
+Wire Wire Line
+	4950 3450 4950 3650
+Wire Wire Line
+	4700 2750 5100 2750
+Wire Wire Line
+	5100 2750 5100 3650
+Wire Wire Line
+	5100 3650 4950 3650
+Connection ~ 4950 3650
+Wire Wire Line
+	4950 3650 4950 4000
+$EndSCHEMATC
