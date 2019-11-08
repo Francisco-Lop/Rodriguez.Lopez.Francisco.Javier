@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{fourier}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Rodriguez Lopez Francisco Javier}
+\begin{document}
+
+\begin{center}
+\LARGE \textbf{Universidad Politecnica de la Zona Metropoilitana de Guadalajara\\}
+
+\includegraphics[scale=1]{Upzmg7.png} 
+
+\large \textbf{Construir una amplificaion con conexion Darlington}\\
+\vspace{1cm}
+\large \textbf{Nombre:\\
+Guzmán Vazquez Jaime Alan Yamil.\\
+Ródriguez López Francisco Javier.\\
+\vspace{0.5cm} Matrícula:\\
+18311861\\
+18311804.\\
+\vspace{0.5cm} Carrera: Ingeniería en Mecatrónica.\\
+\vspace{0.5cm} Materia: Sistemas Electrónicos de Interfaz.\\
+\vspace{0.5cm} Curso: septiembre-noviembre del 2019.\\
+\vspace{0.5cm} Docente: Morán Garabito Carlos Enrique.}
+
+
+\vspace{4cm}
+\small \textbf{07 de Noviembre del 2019}
+\end{center}
+
+\section{Introducción:}
+La realizacion de este reporte de practica se hara en cuenta de explicar los fenomenos y procesos ocurridos en la practica previamente  realizada como lo es la practica con componentes darlington y relevadores.\\
+\\
+Esta consistia mediante un darlington crear una amplificacion de señal  para realzar primeramente el cambio de pata a un relevador, es decir su activacion, se realizo mediante dos transistores comunes en configuracion serie por asi decirlo, para amplificar la salida de señal y generar el cambio de este, despues de ser provado en un relevador comun se probo en relevador del tipo industrial.\\
+Para la segunda parte de la practica se nesecita hacer uso de una fotoresistencia o LDR para la realizacion de este, este consistio en por medio de el control de la luz en la fotoresistencia generar el cambio en el circuito nuevamente del relevador.\\
+
+Este es el funcioamiento aproximado que tiene la practica que se explicara a mayor detalle en el apartado de el procedimiento y los resultados en donde se hablara de todas las variables a utilizar por ejemplo el armado, la programacion o la adaptacion del circuito para el relevador industrial.\\
+El circuito realizado en la practica con el LDR es muy similar al utilizado por ejemplo en los alumbrados publicos en donde tienen la misma funcion de cambiar el encendido de la luz  de la lampara en funcion de la luz exterior en el ambiente, asi pues comenzaremos a explicar la realizacion del circuito en todos sus aspectos en los diferentes apartados de la practica.\\\\  
+
+\section{Objetivo:}
+Por medio de los  transistores darlington y LDR realizar el cambio en un relevador industrial.\\
+
+\section{Materiales:}
+
+\begin{itemize}
+\item Protoboard.
+\item LDR.
+\item Arduino.
+\item Transistor 2n2222a.
+\item Relevador Indutrial (24v).
+\item Diodo rectificador.
+\item Opto-acoplador 4n25.
+\item Resistencias (5.6k, 10k, 220, 100k).
+\item Potenciometro de 100k.
+\item Diodo emisor de luz.
+\item Relevador de 5vcc.
+\end{itemize} 
+
+\section{Procedimiento}
+
+\subsection{Programacion:}
+Para la realizacion de la programacion se realizaron primeramente las variables a utilizar, se utilizo una variable OUT que es la variable de salida que alimentaria el circuito de los transistores y el relevador, y se realizo otra variable llamada IN  que seria el de entrada, en este caso el boton y otra que definio el estado del boton en cero para poder realizar el cambio.\\
+Primeramente se declararon las variable las dos primeras como constantes y la ultima como cambiante:\\
+const int IN;\\
+const int OUT;\\
+int status=LOW;\\
+
+despues de esto le damos insturcciones de su funcion a cada variable:\\
+PinMode(IN,input);\\
+PinMode(OUT,output);\\
+status=IN; \\
+La variable estatus se enlaza con IN para definir el estado del boton como apagado, despues de esto de define el programa, un simple IF:\\
+
+if(digitalRead(IN,HIGH))\\
+{digitalWrite(OUT,HIGH)\\
+}else(digitalWrite(OUT,LOW));\\\\
+En esta ultima parte definimos la condicion que de manera que si la variable IN envia voltaje se le enviara el voltaje a la variable OUT y de no ser asi la variable OUT pernanecera en apagado.\\
+
+\subsection{Conexiones:}
+
+\textbf{Darlington:}\\
+
+Las conexiones, para en este caso, el acomodo del Darlington, se basan en la configuracion interna de este, en este caso, lo esencial del Darlington, es que en su integrado, tiene dos transistores, en este caso, no se dispuso de este componente, por lo que se hizo, es poner dos transistores con los que se a estado trabajando, que seria el 2N2222a, para la sustitucion del Darlington, en este caso, se colocan dos transistores del mismo tipo, para no interferir en la configuracion interna misma de este, y no estropear la resistencia, en el caso de la doble potencia que genera el tener dos mismos transistores, en un acomodo en serie, para poder tener mejor manejo, se tiene como teoria que entre dos transistores del mismo regimen, se comunica una doble potencia, y a ello se le da el doble de la resistencia que se esta trabajando, en este caso, y en el del anterior trabajando, con una resistencia de 2200 Ohm, se tiene que tener el doble de resistencia para la entrada de la interfaz de entrada, que se sigue trabajando, con opto-acopladores, y relevadores, sustituyendo solo la parte de los transistores, para poder tener el manejo completo de la potencia disipada.\\
+
+\begin{center}
+\includegraphics[width=7cm]{esquema.jpeg} 
+\end{center}
+
+Apreciando el resultado, que se obtuvo en la entrada de doble potencia que nos da por ende, los transistores, que seria la activacion, de un relevador industrial, el cual trabaja con 24v, para la cual solo contamos con los 5v, que nos da la generacion del arduino. es por eso que se dispone de una fuente de 24 voltios independiente, para la activacion de este al momento de accionar el boton, que genera la señal de entrada a salida, como ya se ha estado trabajando. En el caso, de la potencia que disipa los dos transistores es eficiente, ya que al activar el relevador industrial, se dispone de una potencia mayor, y este acomodo de transistores, nos da lo que necesitamos.\\
+
+\textbf{LDR:}\\
+
+En el caso, de la segunda parte de esta practica, que seria la estructura y acomodo, para la ativacion de un relevador comun, de 5vcc, dada la eficiencia que es la resistencia foto-sensible, este activara en su relevancia al relevador, en su conexion del esquematico,proporcionado por el docente, tiene una conexion desde el Relevador, en ello, la conexion del darlington, sustituida por los transistores 2N2222A, y de ello, la configuracion, desde un potenciometro, que regulara la luminosidad,y en ello el valor de potencia disipada, en ello va una resistencia de 100k ohm, esto para controlar el potenciometro, en constancia al flujo que se le este dando el cambio, y por ultimo la conexion del LDR, que seria lo mas esencial en este punto de la practica, ya que al ser extruida la luz, de este, activara una mayor potencia, que activara en su estado, el relevador conectado, la conexion del relevador, y del darlignton, es la misma que en el caso, solo del darlington, ya que este solo sustituira, la interfaz de entrada que seria la de los optoacopladores, por la configuracion, de un LDR, potenciometro, y una resistencia de 100k, que sustituira a la interfaz de entrada.\\
+
+\begin{center}
+\includegraphics[width=7cm]{esquema2.jpeg} 
+\end{center}
+
+Una vez teniendo en cuenta, todo las conexiones tanto, las del Darlington, como las del LDR, se tiene que tener en cuenta, los valores, de corriente y voltaje que vamos a tener en la entrada, y como se va a disipar en la salida, para que la corriente y el mismo voltaje, no se desvien, y  en su contraste afecten los componentes que se disponen, para la realizacion de este practica. 
+
+\section{Resultados:}
+
+Los resultados, lanzados por medio de la parte 1, que seria la configuracion del Darlington, son en sentencia la activacion del relevador industrial, este se activa desde la conmutacion que se tiene con el arduino, y la interfaz de entrada, para asi hacer mover al relevador industrial de manera eficiente, y sin complicaiones de que este, desvie la corriente, y queme los componentes, que se tienen, al activar, el relevador, nos damos cuenta, de que la potencia en este caso aumentada, sirvio, para ser disipado en todo el sistema y que este sea de mejor modo que uno solo, en el caso de la resistencia se le aumento el doble dejando esta a un valor de 5600 ohm, para que de este modo, no tener problemas, a la hora de que este reciba, el voltaje y la corriente, que genera la interfaz de entrada, con respecto a los transistores.\\
+
+\begin{center}
+\includegraphics[width=9cm]{Rele.jpeg} 
+\end{center}
+
+Siendo esto generado, por el acomodo que se le dio a las señales de salida, en su interfaz, y como esta con respecto al acomodo, de Base, Emisor y Conector, se transmiten, para dar en su sentencia la potencia que tienen que dar, dirigida, al diodo rectificador, que se coloca para el mejor y mas apto control de la corriente, y voltaje entregado, en este caso, de la fuente independiente, al exitado de las bobinas, y como estas reflejan, en su interior, el cambio de NC a NA, activando el relevador.\\
+
+
+En el caso del LDR, en su resolucion, cuando este deja de recibir luz, su resistencia se eleva a los Mega-ohmios, lo que hace que las conexiones dadas, generan que el acomodo de los transistores, se dirija en un tiempo a conduccion, lo que hace que cuando esto pase, se active el relevador al recibir la señal de conmutacion y conductividad de las conexiones de los transistores y asi generando el encendido de un led, y la rectificacion de ello. Puesto en marcha por metodos de luminosidad de recibimiento, en constancia al LDR, ya que si este recibe luz, su resistencia baja demasiado y se dirija a tierra, lo que hace que el relevador deje de exitarse por el voltaje dado, y de esto se genere, la sentiencia del LDR.\\
+
+En este caso, el potenciometro, se utiliza para regular tanto el exitado, de la bobina como el control que se tiene en la luminosidad del Led, para hacer mas eficiente, esto, y de ello, el dirigir de las señales, en relacion a la potencia disipada por los transistores y su interconexion entre si. Asi pues generando el resultado de esta practica, que es el encendido de un relevador, dada la emision de luz que reciba el LDR, y como este puede saturar el arreglo de las transiciones de potencia.\\
+
+\textbf{\Large Conclusión:}\\
+
+\textbf{Jaime Guzman:}\\
+Las aplicaciones practicas de esta practica como por ejemplo el alumbrado publico nos ayudan a comprender la ingenieria detras de todos los procesos automatizados que incluso estan en la calle y que pueden ser muy utiles en su utilizacion en el dia a dia, al igual de importante el uso del transistor Darlington y su configuracion que  se prodria decir que son transistroes en serie nos beneficia mucho por la gran amplificacion o sensibilidad que este tiene.\\\\
+El LDR tambien es una parte muy importante del circuito puesto que es el que recibe el control de los diferentes  cambios de luz en el ambiente y realiza los cambio en el circuito y ademas de este tenemos tambien el relevador que realiza el cambio en sus switch interior que realiza el intercambio de energia de ser activado, son partes cruciales que se juntan en este circuito incluso para automatizar de forma sencilla un proceso que sin darnos cuenta en la vida comun y corriente existen y el saber su funcionamiento asombra.\\
+
+\textbf{Francisco Rodriguez:}\\
+La eficiencia, que se tienen con componentes de alta potencia como los son los transistores Darlington, son de gran ayuda, ya para terminos de extrema relevancia en lo que seria el voltaje que se requiere para estos, y como estos pueden ser de ayuda y de mejor manejo, a la hora de su conductividad, con componenetes de grado industrial, como en casos no solo de relevadores, sino de sensores,y de mas herramientas, que nos son utiles, para la generacion de tareas de mejor manejo y su autonomia en ello.\\
+Tanto en el caso del LDR, en su mejor estado, y de mejor manejo, dejando que la conductividad, pase de ser mayor a menor en cuestion, a temas como la luminosidad y como de ello se pueden guiar sistemas de autonomia, al ser activados solo con la presencia de optica, en su punto maximo, dejando apreciar, que entere el conmutado, de las herramientas, de alta potencia hay un arreglo especifico, para cada uno de ello, y como estos pueden ser de ayuda en practicas, y arreglos, para un proyecto en general, social y profesional.\\
+
+\textbf{\Large Referencias:}\\
+
+Carlos Enrique Moran Garabito, Sistemas Electronicos de Interfaz, Curso: Sep-Dic 2019 c, Construir una amplificacion con conexion Darlington.
+
+\end{document}
